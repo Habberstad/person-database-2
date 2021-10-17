@@ -1,16 +1,32 @@
 package no.kristiania.person;
 
+import org.junit.jupiter.api.Test;
+
+import javax.sql.DataSource;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class PersonDaoTest {
 
     @Test
     void shouldRetrieveSavedPersonFromDatabase() {
         PersonDao dao = new PersonDao(createDataSource());
 
-        Person persons = examplePerson();
+        Person person = examplePerson();
         dao.save(person);
 
         assertThat(dao.retrieve(person.getId()))
-            // TODO
+                .usingRecursiveComparison()
+                .isEqualTo(person)
         ;
+    }
+
+
+    private Person examplePerson() {
+        return new Person();
+    }
+
+    private DataSource createDataSource() {
+        return null;
     }
 }
