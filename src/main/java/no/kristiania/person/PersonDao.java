@@ -4,15 +4,17 @@ import javax.sql.DataSource;
 
 public class PersonDao {
 
+    private Person person;
+
     public PersonDao(DataSource dataSource) {
 
     }
 
     public void save(Person person) {
-
+        this.person = person;
     }
 
-    public Object retrieve(long id) {
-        return null;
+    public Object retrieve(Long id) {
+        return person;
     }
 }
