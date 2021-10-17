@@ -1,3 +1,4 @@
+
 package no.kristiania.person;
 
 public class Person {
@@ -5,7 +6,6 @@ public class Person {
     private String firstName;
     private String lastName;
 
-    // ID
     public Long getId() {
         return id;
     }
@@ -14,7 +14,6 @@ public class Person {
         this.id = id;
     }
 
-    // FIRSTNAME
     public String getFirstName() {
         return firstName;
     }
@@ -23,7 +22,6 @@ public class Person {
         this.firstName = firstName;
     }
 
-    // LASTNAME
     public String getLastName() {
         return lastName;
     }
@@ -32,6 +30,12 @@ public class Person {
         this.lastName = lastName;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
+    }
 }
